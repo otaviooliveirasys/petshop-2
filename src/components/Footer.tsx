@@ -59,16 +59,16 @@ export const Footer: React.FC = () => {
                 <a href="#hero" className="hover:text-white transition-colors">Início</a>
               </li>
               <li>
-                <a href="#conceito" className="hover:text-white transition-colors">Sobre nós</a>
+                <a href="#conceito" className="hover:text-white transition-colors">Sobre</a>
               </li>
               <li>
                 <a href="#servicos" className="hover:text-white transition-colors">Serviços</a>
               </li>
               <li>
-                <a href="#galeria" className="hover:text-white transition-colors">Galeria</a>
+                <a href="#experiencia" className="hover:text-white transition-colors">Experiência</a>
               </li>
               <li>
-                <a href="#localizacao" className="hover:text-white transition-colors">Contato & Mapa</a>
+                <a href="#localizacao" className="hover:text-white transition-colors">Localização</a>
               </li>
             </ul>
           </div>
@@ -80,19 +80,19 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-sm text-slate-400">
               <li>
-                <a href="#banho-e-tosa" className="hover:text-white transition-colors">🐶 Banho & Tosa</a>
+                <a href="#servicos" className="hover:text-white transition-colors">🐶 Banho & Tosa</a>
               </li>
               <li>
-                <a href="#veterinaria" className="hover:text-white transition-colors">🩺 Atendimento Veterinário</a>
+                <a href="#servicos" className="hover:text-white transition-colors">🩺 Atendimento Veterinário</a>
               </li>
               <li>
-                <a href="#pet-shop" className="hover:text-white transition-colors">🛍️ Pet Shop & Boutique</a>
+                <a href="#servicos" className="hover:text-white transition-colors">🛍️ Pet Shop & Boutique</a>
               </li>
               <li>
-                <a href="#cafeteria" className="hover:text-white transition-colors">☕ Cafeteria Pet Friendly</a>
+                <a href="#servicos" className="hover:text-white transition-colors">☕ Cafeteria Pet Friendly</a>
               </li>
               <li>
-                <a href="#carrossel-experiencia" className="hover:text-white transition-colors">🐾 Daycare & Diversão</a>
+                <a href="#servicos" className="hover:text-white transition-colors">🐾 Daycare & Diversão</a>
               </li>
             </ul>
           </div>

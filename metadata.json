@@ -2,5 +2,7 @@
   "name": "DIVERT PET",
   "description": "Pet shop, banho e tosa, veterinária e cafeteria em um só lugar no Recreio dos Bandeirantes, RJ. Experiência premium para cuidar, divertir e mimar seu pet.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
