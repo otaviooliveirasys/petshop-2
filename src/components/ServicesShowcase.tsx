@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { SERVICES_LIST, CONTACT_INFO } from '../data';
-import { Sparkles, MessageCircle, CheckCircle2, ArrowRight } from 'lucide-react';
+import { SERVICES_LIST, CONTACT_INFO, DIVERT_CAFE_MENU } from '../data';
+import { Sparkles, MessageCircle, CheckCircle2, ArrowRight, UtensilsCrossed, Phone } from 'lucide-react';
 
 export const ServicesShowcase: React.FC = () => {
   const [activeTabId, setActiveTabId] = useState<string>(SERVICES_LIST[0].id);
@@ -25,7 +25,7 @@ export const ServicesShowcase: React.FC = () => {
             Tudo o que seu pet precisa em um só lugar.
           </h2>
           <p className="text-sm sm:text-base text-[#4A5D67]">
-            Clique em cada serviço para conhecer nossa estrutura e agendar com facilidade.
+            Clique em cada serviço para conhecer nossa estrutura e fotos reais dos nossos hóspedes e clientes.
           </p>
         </div>
 
@@ -62,13 +62,14 @@ export const ServicesShowcase: React.FC = () => {
               className="grid grid-cols-1 lg:grid-cols-12"
             >
               {/* Photo Side */}
-              <div className="lg:col-span-6 relative min-h-[320px] sm:min-h-[400px] overflow-hidden bg-slate-100">
+              <div className="lg:col-span-6 relative min-h-[320px] sm:min-h-[440px] overflow-hidden bg-slate-100">
                 <img
                   src={activeService.image}
                   alt={activeService.title}
                   className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
 
                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-[#6F4325] shadow-xs">
                   {activeService.tag}
@@ -104,15 +105,49 @@ export const ServicesShowcase: React.FC = () => {
                     {activeService.description}
                   </p>
 
-                  {/* Highlights */}
-                  <div className="space-y-2.5 mb-8">
-                    {activeService.highlights.map((item, hi) => (
-                      <div key={hi} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#2A3B43]">
-                        <CheckCircle2 className="w-4 h-4 text-[#63C3D1] shrink-0 mt-0.5" />
-                        <span>{item}</span>
+                  {/* If Cafeteria: Display Authentic Divert Café Menu */}
+                  {activeService.id === 'cafeteria' ? (
+                    <div className="mb-6 p-4 rounded-2xl bg-[#F4EDE5] border border-[#E3D4C4]">
+                      <div className="flex items-center gap-2 mb-3">
+                        <UtensilsCrossed className="w-4 h-4 text-[#6F4325]" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#6F4325]">
+                          Cardápio Divert Café • Salgados
+                        </span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                        {DIVERT_CAFE_MENU.map((item) => (
+                          <div
+                            key={item.id}
+                            className="flex items-center justify-between p-2 rounded-lg bg-white/90 border border-[#E8DEC8]"
+                          >
+                            <span className="font-medium text-[#2A3B43] pr-2">{item.name}</span>
+                            <span className="font-bold text-[#6F4325] shrink-0">{item.price}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-3 pt-2 border-t border-[#E3D4C4]/80 flex flex-wrap items-center justify-between text-[11px] text-[#5A351B]">
+                        <span>Pedidos e Encomendas:</span>
+                        <div className="flex items-center gap-3 font-semibold">
+                          <a href="tel:+5521976401017" className="hover:underline flex items-center gap-1">
+                            <Phone className="w-3 h-3 text-[#6F4325]" /> (21) 97640-1017
+                          </a>
+                          <a href="tel:+552134891561" className="hover:underline">
+                            (21) 3489-1561
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    /* Highlights for other services */
+                    <div className="space-y-2.5 mb-8">
+                      {activeService.highlights.map((item, hi) => (
+                        <div key={hi} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#2A3B43]">
+                          <CheckCircle2 className="w-4 h-4 text-[#63C3D1] shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Direct Action Button */}

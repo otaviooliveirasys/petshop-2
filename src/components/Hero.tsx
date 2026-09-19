@@ -125,10 +125,11 @@ export const Hero: React.FC = () => {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] bg-gradient-to-tr from-[#93CEE4] to-[#F0F8FB]">
                 <img
-                  src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85"
-                  alt="Cachorro feliz e bem cuidado na Divert Pet"
+                  src="/divert_photos/photo_dogs_sunglasses.jpg"
+                  alt="Cachorros felizes de óculos de sol na área da piscina Divert Pet"
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
                   loading="eager"
+                  referrerPolicy="no-referrer"
                 />
                 
                 {/* Subtle gradient overlay at bottom */}
@@ -152,9 +153,10 @@ export const Hero: React.FC = () => {
                 className="absolute -top-6 -left-6 sm:-left-10 bg-white/95 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/80 flex items-center gap-3 max-w-[210px]"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=150&q=80"
-                  alt="Gato tranquilo"
+                  src="/divert_photos/photo_pomeranian_ballpit.jpg"
+                  alt="Pet feliz no parquinho"
                   className="w-12 h-12 rounded-xl object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 <div className="flex flex-col">
                   <span className="text-[11px] font-bold text-[#0F1419] leading-tight">

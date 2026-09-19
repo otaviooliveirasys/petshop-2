@@ -11,93 +11,112 @@ export const CONTACT_INFO = {
     full: 'Rua Antonio Baptista Bittencourt, 325, Loja C - Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22790-250',
     googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Rua+Antonio+Baptista+Bittencourt+325+Loja+C+Recreio+dos+Bandeirantes+Rio+de+Janeiro+RJ+22790-250',
   },
-  phoneFormatted: '(21) 99999-9999', // display placeholder if needed
+  phones: [
+    { label: 'WhatsApp Atendimento', number: '(21) 97640-1017', link: 'https://wa.me/5521976401017' },
+    { label: 'Telefone Divert Pet', number: '(21) 3489-1561', link: 'tel:+552134891561' },
+  ],
 };
+
+export interface CafeMenuItem {
+  id: string;
+  name: string;
+  price: string;
+  category: string;
+}
+
+export const DIVERT_CAFE_MENU: CafeMenuItem[] = [
+  { id: '1', name: 'Croissant de Quatro Queijos', price: 'R$ 6,00', category: 'Salgados' },
+  { id: '2', name: 'Croissant de Frango com Requeijão', price: 'R$ 6,00', category: 'Salgados' },
+  { id: '3', name: 'Croissant Integral de Peito de Peru', price: 'R$ 6,00', category: 'Salgados' },
+  { id: '4', name: 'Croissant de Chocolate', price: 'R$ 6,00', category: 'Salgados' },
+  { id: '5', name: 'Joelho', price: 'R$ 6,00', category: 'Salgados' },
+  { id: '6', name: 'Hambúrguer', price: 'R$ 6,00', category: 'Salgados' },
+];
 
 export const SERVICES_LIST: ServiceCard[] = [
   {
     id: 'banho-e-tosa',
     number: '01',
     title: 'Banho & Tosa',
-    subtitle: 'Estética Animal Premium',
-    description: 'Cuidados especiais para deixar seu pet limpo, cheiroso e ainda mais feliz.',
-    image: 'https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1200&q=80',
-    tag: '🐶 Estética & Higiene',
+    subtitle: 'Estética Animal & Bem-estar',
+    description: 'Cuidados carinhosos e relaxantes para deixar seu pet limpo, cheiroso e revigorado.',
+    image: '/divert_photos/photo_golden_bath.jpg',
+    tag: '🐶 Banho & Hidratação',
     ctaText: 'Agendar Banho e Tosa',
     ctaLink: CONTACT_INFO.whatsappUrl,
     highlights: [
-      'Banhos relaxantes com produtos selecionados',
-      'Tosa higiênica e tosa da raça com acabamento impecável',
-      'Secagem suave e ambiente climatizado',
-      'Cuidado carinhoso e humanizado em cada detalhe'
-    ]
-  },
-  {
-    id: 'veterinaria',
-    number: '02',
-    title: 'Veterinária',
-    subtitle: 'Saúde & Longevidade',
-    description: 'Cuidados veterinários para acompanhar a saúde e o bem-estar do seu pet.',
-    image: 'https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1200&q=80',
-    tag: '🩺 Saúde & Bem-estar',
-    ctaText: 'Falar pelo WhatsApp',
-    ctaLink: CONTACT_INFO.whatsappUrl,
-    highlights: [
-      'Acompanhamento preventivo e clínico',
-      'Atendimento cuidadoso e sem estresse para cães e gatos',
-      'Ambiente calmo, higienizado e acolhedor',
-      'Foco total no bem-estar e conforto do animal'
-    ]
-  },
-  {
-    id: 'pet-shop',
-    number: '03',
-    title: 'Pet Shop',
-    subtitle: 'Boutique Selecionada',
-    description: 'Produtos, acessórios e tudo o que seu pet precisa.',
-    image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=80',
-    tag: '🛍️ Boutique & Acessórios',
-    ctaText: 'Falar pelo WhatsApp',
-    ctaLink: CONTACT_INFO.whatsappUrl,
-    highlights: [
-      'Alimentação de alta qualidade e petiscos selecionados',
-      'Brinquedos educativos e estimulantes',
-      'Caminhas anatômicas, guias, coleiras e peitorais modernos',
-      'Itens de cuidado diário de marcas conceituadas'
-    ]
-  },
-  {
-    id: 'cafeteria',
-    number: '04',
-    title: 'Cafeteria',
-    subtitle: 'Espaço Pet Friendly',
-    description: 'Um espaço agradável para você aproveitar enquanto seu pet também curte a experiência.',
-    image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80',
-    tag: '☕ Café & Convivência',
-    ctaText: 'Falar pelo WhatsApp',
-    ctaLink: CONTACT_INFO.whatsappUrl,
-    highlights: [
-      'Café especial, bebidas e ambiente acolhedor para tutores',
-      'Área planejada para você relaxar lado a lado com seu pet',
-      'Climatização agradável e mesas confortáveis',
-      'Pausa perfeita durante o banho ou após as compras'
+      'Banhos relaxantes com água na temperatura ideal',
+      'Produtos hipoalergênicos e cosméticos selecionados',
+      'Tosa higiênica e tosa padrão com acabamento delicado',
+      'Secagem suave e ambiente acolhedor no Recreio'
     ]
   },
   {
     id: 'daycare',
-    number: '05',
-    title: 'Daycare / Diversão',
-    subtitle: 'Socialização & Afeto',
-    description: 'Um ambiente pensado para diversão, interação e momentos especiais.',
-    image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80',
-    tag: '🐾 Socialização & Alegria',
+    number: '02',
+    title: 'Daycare & Parquinho',
+    subtitle: 'Socialização & Diversão',
+    description: 'Parquinho completo com escorregador, piscina de bolinhas, área molhada e muita alegria supervisionada.',
+    image: '/divert_photos/photo_pomeranian_slide.jpg',
+    tag: '🐾 Parquinho & Diversão',
     ctaText: 'Agendar Atendimento',
     ctaLink: CONTACT_INFO.whatsappUrl,
     highlights: [
-      'Atividades recreativas e estímulo físico equilibrado',
-      'Monitoramento atento e equipe dedicada',
-      'Espaço seguro, higienizado e enriquecido',
-      'Momentos de socialização que deixam seu pet alegre e tranquilo'
+      'Piscina de bolinhas e brinquedos interativos',
+      'Escorregador e circuito de atividades recreativas',
+      'Área com grama sintética e fonte de água fresca',
+      'Supervisão contínua com muito carinho e respeito'
+    ]
+  },
+  {
+    id: 'cafeteria',
+    number: '03',
+    title: 'Divert Café',
+    subtitle: 'Espaço Pet Friendly',
+    description: 'Um café aconchegante com salgados frescos e croissants quentinhos para você relaxar com seu pet.',
+    image: '/divert_photos/photo_cafe_menu.jpg',
+    tag: '☕ Cafeteria & Salgados',
+    ctaText: 'Ver Cardápio no WhatsApp',
+    ctaLink: CONTACT_INFO.whatsappUrl,
+    highlights: [
+      'Croissants recheados e salgados variados por apenas R$ 6,00',
+      'Café saboroso e bebidas enquanto seu pet é atendido',
+      'Mesas confortáveis e convivência pet friendly real',
+      'Pedidos e informações: (21) 97640-1017 e (21) 3489-1561'
+    ]
+  },
+  {
+    id: 'pet-shop',
+    number: '04',
+    title: 'Pet Shop & Boutique',
+    subtitle: 'Mimos & Cuidados',
+    description: 'Bolinhas, mordedores, brinquedos estimulantes e acessórios selecionados para cães e gatos.',
+    image: '/divert_photos/photo_golden_toy.jpg',
+    tag: '🛍️ Brinquedos & Acessórios',
+    ctaText: 'Consultar Produtos',
+    ctaLink: CONTACT_INFO.whatsappUrl,
+    highlights: [
+      'Bolinhas e brinquedos resistentes de alta qualidade',
+      'Acessórios, caminhas, guias e peitorais anatômicos',
+      'Itens de higiene, hidratação e cuidado diário',
+      'Atendimento consultivo para as necessidades do seu pet'
+    ]
+  },
+  {
+    id: 'veterinaria',
+    number: '05',
+    title: 'Veterinária',
+    subtitle: 'Saúde & Longevidade',
+    description: 'Acompanhamento clínico e preventivo focado na saúde e na tranquilidade do seu animal.',
+    image: '/divert_photos/photo_dogs_sunglasses.jpg',
+    tag: '🩺 Saúde & Prevenção',
+    ctaText: 'Falar pelo WhatsApp',
+    ctaLink: CONTACT_INFO.whatsappUrl,
+    highlights: [
+      'Acompanhamento preventivo e clínico humanizado',
+      'Ambiente calmo para evitar estresse durante a consulta',
+      'Atendimento dedicado a cães e gatos',
+      'Orientações claras para o bem-estar da família'
     ]
   }
 ];
@@ -105,51 +124,58 @@ export const SERVICES_LIST: ServiceCard[] = [
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'g1',
-    title: 'Golden Retriever pós-banho e escovação',
+    title: 'Golden Retriever aproveitando água fresca e banho relaxante',
     category: 'banho',
-    imageUrl: 'https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/divert_photos/photo_golden_bath.jpg',
     aspect: 'col-span-1 md:col-span-2 row-span-2',
   },
   {
     id: 'g2',
-    title: 'Gato Siamês em consulta preventiva',
-    category: 'veterinaria',
-    imageUrl: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80',
+    title: 'Lulu da Pomerânia super estiloso na piscina de bolinhas',
+    category: 'daycare',
+    imageUrl: '/divert_photos/photo_pomeranian_ballpit.jpg',
     aspect: 'col-span-1',
   },
   {
     id: 'g3',
-    title: 'Café especial servido na nossa cafeteria pet friendly',
-    category: 'cafe',
-    imageUrl: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80',
+    title: 'Duplinha curtindo a piscina de óculos de sol',
+    category: 'daycare',
+    imageUrl: '/divert_photos/photo_dogs_sunglasses.jpg',
     aspect: 'col-span-1',
   },
   {
     id: 'g4',
-    title: 'Acessórios e coleiras premium na boutique',
-    category: 'loja',
-    imageUrl: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80',
+    title: 'Samoieda sorridente no parquinho da Divert Pet',
+    category: 'daycare',
+    imageUrl: '/divert_photos/photo_samoyed_gate.jpg',
     aspect: 'col-span-1',
   },
   {
     id: 'g5',
-    title: 'Cães se divertindo em momento de recreação',
+    title: 'Pomerânia se divertindo no escorregador azul',
     category: 'daycare',
-    imageUrl: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80',
-    aspect: 'col-span-1 md:col-span-2',
+    imageUrl: '/divert_photos/photo_pomeranian_slide.jpg',
+    aspect: 'col-span-1',
   },
   {
     id: 'g6',
-    title: 'Cuidado atencioso e carinhoso no banho',
-    category: 'banho',
-    imageUrl: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80',
+    title: 'Golden Retrievers se refrescando na piscina molhada',
+    category: 'daycare',
+    imageUrl: '/divert_photos/photo_goldens_pool.jpg',
     aspect: 'col-span-1',
   },
   {
     id: 'g7',
-    title: 'Tutor relaxando com seu cachorro na cafeteria',
+    title: 'Golden feliz relaxando com brinquedo de bolinha',
+    category: 'loja',
+    imageUrl: '/divert_photos/photo_golden_toy.jpg',
+    aspect: 'col-span-1',
+  },
+  {
+    id: 'g8',
+    title: 'Croissants e delícias do cardápio do Divert Café',
     category: 'cafe',
-    imageUrl: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=800&q=80',
+    imageUrl: '/divert_photos/photo_cafe_menu.jpg',
     aspect: 'col-span-1',
   }
 ];
@@ -157,34 +183,34 @@ export const GALLERY_ITEMS: GalleryItem[] = [
 export const INSTAGRAM_POSTS: InstagramPost[] = [
   {
     id: 'ig1',
-    imageUrl: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?auto=format&fit=crop&w=600&q=80',
-    caption: 'Dia de spa completo na Divert Pet! Olha esse sorriso e pelo macio! 🛁✨ #DivertPet #Recreio',
-    likes: '142',
-    comments: '18',
+    imageUrl: '/divert_photos/photo_pomeranian_slide.jpg',
+    caption: 'Muita diversão no escorregador do parquinho Divert Pet! Aqui a felicidade é garantida! 🐾✨',
+    likes: '184',
+    comments: '22',
     url: CONTACT_INFO.instagramUrl,
   },
   {
     id: 'ig2',
-    imageUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80',
-    caption: 'Momento café enquanto o amigão toma aquele banho caprichado. Conforto para ambos! ☕🐶 #PetFriendly',
-    likes: '198',
-    comments: '24',
+    imageUrl: '/divert_photos/photo_dogs_sunglasses.jpg',
+    caption: 'Estilo e atitude pura! Nossos amiguinhos curtindo a área molhada no Recreio dos Bandeirantes! 😎🐶',
+    likes: '249',
+    comments: '35',
     url: CONTACT_INFO.instagramUrl,
   },
   {
     id: 'ig3',
-    imageUrl: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80',
-    caption: 'Carinho, paciência e respeito em cada atendimento. Nossa prioridade é o bem-estar! 🩺💙',
-    likes: '230',
-    comments: '31',
+    imageUrl: '/divert_photos/photo_golden_bath.jpg',
+    caption: 'Refrescância total! Aquele momento gostoso de banho que todo pet merece receber! 🛁💙',
+    likes: '210',
+    comments: '28',
     url: CONTACT_INFO.instagramUrl,
   },
   {
     id: 'ig4',
-    imageUrl: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=600&q=80',
-    caption: 'Novidades na boutique: caminhas ultraconfortáveis e brinquedos para todas as idades. 🧸✨',
-    likes: '165',
-    comments: '15',
+    imageUrl: '/divert_photos/photo_pomeranian_ballpit.jpg',
+    caption: 'Pronto para a festa na piscina de bolinhas! Venha viver a experiência Divert Pet! 🎈🎉',
+    likes: '195',
+    comments: '19',
     url: CONTACT_INFO.instagramUrl,
   },
 ];

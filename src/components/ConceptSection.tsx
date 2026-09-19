@@ -43,10 +43,11 @@ export const ConceptSection: React.FC = () => {
               >
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border-2 border-white aspect-[3/4] bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=800&q=80"
-                    alt="Cão feliz na Divert Pet"
+                    src="/divert_photos/photo_golden_bath.jpg"
+                    alt="Golden Retriever aproveitando banho na Divert Pet"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
 
@@ -79,10 +80,11 @@ export const ConceptSection: React.FC = () => {
 
                 <div className="relative rounded-3xl overflow-hidden shadow-lg border-2 border-white aspect-[3/4] bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=800&q=80"
-                    alt="Gatinho dócil em ambiente tranquilo"
+                    src="/divert_photos/photo_samoyed_gate.jpg"
+                    alt="Samoieda sorridente no parquinho da Divert Pet"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </motion.div>

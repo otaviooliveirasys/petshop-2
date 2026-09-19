@@ -73,6 +73,20 @@ export const LocationSection: React.FC = () => {
                 </div>
 
                 <div className="p-4 rounded-2xl bg-white/80 border border-white flex items-start gap-3.5">
+                  <Phone className="w-5 h-5 text-[#6F4325] shrink-0 mt-1" />
+                  <div>
+                    <span className="text-xs uppercase font-bold tracking-wider text-[#5A6E78] block">
+                      Telefones de Contato
+                    </span>
+                    <p className="text-sm font-semibold text-[#0F1419] mt-0.5">
+                      <a href="tel:+5521976401017" className="hover:underline text-[#6F4325] mr-2">(21) 97640-1017</a>
+                      •
+                      <a href="tel:+552134891561" className="hover:underline text-[#6F4325] ml-2">(21) 3489-1561</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white/80 border border-white flex items-start gap-3.5">
                   <MessageCircle className="w-5 h-5 text-[#63C3D1] shrink-0 mt-1" />
                   <div>
                     <span className="text-xs uppercase font-bold tracking-wider text-[#5A6E78] block">

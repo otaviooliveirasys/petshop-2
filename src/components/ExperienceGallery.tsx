@@ -7,8 +7,8 @@ import { GalleryItem } from '../types';
 export const ExperienceGallery: React.FC = () => {
   const [activeImage, setActiveImage] = useState<GalleryItem | null>(null);
 
-  // Take top 6 diverse photos for an aesthetic, non-bloated mosaic
-  const featuredGallery = GALLERY_ITEMS.slice(0, 6);
+  // Display all real photos in an elegant, responsive 4-column mosaic
+  const featuredGallery = GALLERY_ITEMS;
 
   return (
     <section id="experiencia" className="py-20 bg-white relative">
@@ -24,10 +24,10 @@ export const ExperienceGallery: React.FC = () => {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0F1419] tracking-tight">
-              Galeria & Conexão
+              Galeria & Conexão Real
             </h2>
             <p className="text-sm sm:text-base text-[#4A5D67] mt-1 max-w-xl">
-              Confira momentos reais de cuidado, banho, cafeteria e acompanhe nosso dia a dia no Instagram.
+              Confira momentos reais de cuidado, banho, escorregador, piscina de bolinhas, café e acompanhe nosso dia a dia no Instagram.
             </p>
           </div>
 
@@ -44,9 +44,9 @@ export const ExperienceGallery: React.FC = () => {
           </div>
         </div>
 
-        {/* 6 Grid Photo Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {featuredGallery.map((item, idx) => (
+        {/* 8 Grid Photo Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
+          {featuredGallery.map((item) => (
             <motion.div
               key={item.id}
               whileHover={{ y: -4 }}
@@ -58,12 +58,13 @@ export const ExperienceGallery: React.FC = () => {
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
                 loading="lazy"
+                referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3 text-white">
+              <div className="absolute inset-0 bg-black/45 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3.5 text-white">
                 <span className="text-[10px] uppercase tracking-wider text-[#93CEE4] font-bold">
                   {item.category}
                 </span>
-                <p className="text-xs font-semibold line-clamp-1">
+                <p className="text-xs font-semibold line-clamp-2 leading-snug">
                   {item.title}
                 </p>
               </div>
@@ -94,6 +95,7 @@ export const ExperienceGallery: React.FC = () => {
               src={activeImage.imageUrl}
               alt={activeImage.title}
               className="rounded-2xl max-h-[75vh] object-contain shadow-2xl"
+              referrerPolicy="no-referrer"
             />
             <p className="text-white text-center mt-3 text-sm font-semibold">
               {activeImage.title}
